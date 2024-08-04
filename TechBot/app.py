@@ -100,7 +100,10 @@ if selected == 'Alagapie ChatMate':
     if prompt:
      st.chat_message('user').markdown(prompt)
 
-     response = st.session_state.chat_session.send_message(prompt)
+     with placeholder:
+        with st.spinner("Generating response..."):
+            response = st.session_state.chat_session.send_message(prompt)
+            placeholder.empty()
      with st.chat_message("assistant"):
       st.markdown(response.text)
 if selected == 'Alagapie MultiLingo':
@@ -131,7 +134,12 @@ if selected == 'Alagapie MultiLingo':
        st.session_state.translation_chat_history.append(("human", input_text))
     
     # Perform translation
-       translation = translate(input_language, output_language, input_text)
+       placeholder = st.empty()
+       with placeholder:
+            with st.spinner("Translating..."):
+                # Perform translation
+                translation = translate(input_language, output_language, input_text)
+                placeholder.empty()
     
     # Add translation result to chat history
        st.session_state.translation_chat_history.append(("assistant", translation))
@@ -168,7 +176,13 @@ if selected == 'Alagapie CodeGenie':
      st.session_state.code_chat_history.append(("human", input))
     
     # Send user's message to Gemini-Pro and get the response
-     gemini_response = code(programming_language, input)
+     placeholder = st.empty()
+     with placeholder:
+            with st.spinner("Generating code..."):
+                # Send user's message to Gemini-Pro and get the response
+                gemini_response = code(programming_language, input)
+                # Clear the placeholder after getting the response
+                placeholder.empty()
     
     # Add Gemini-Pro's response to chat history
      st.session_state.code_chat_history.append(("assistant", gemini_response))
