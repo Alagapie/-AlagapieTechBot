@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # Configure the genai library with the API key
 
-genai.configure(api_key="AIzaSyAf8HqQEmwg8JGPYt_kym-P6Vivz9wWlG)
+genai.configure(api_key="AIzaSyAf8HqQEmwg8JGPYt_kym-P6Vivz9wWlG8")
 generation_config={
     "temperature":0.9,
     "top_k":40,
