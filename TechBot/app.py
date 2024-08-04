@@ -177,13 +177,9 @@ if selected == 'Alagapie CodeGenie':
      st.session_state.code_chat_history.append(("human", input))
     
     # Send user's message to Gemini-Pro and get the response
-     placeholder = st.empty()
-     with placeholder:
-            with st.spinner("Generating code..."):
-                # Send user's message to Gemini-Pro and get the response
-                gemini_response = code(programming_language, input)
-                # Clear the placeholder after getting the response
-                placeholder.empty()
+     with st.spinner("Generating code..."):
+            # Send user's message to Gemini-Pro and get the response
+            gemini_response = code(programming_language, input)
     
     # Add Gemini-Pro's response to chat history
      st.session_state.code_chat_history.append(("assistant", gemini_response))
