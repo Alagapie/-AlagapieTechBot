@@ -4,11 +4,10 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 
 
-api_key = "AIzaSyAf8HqQEmwg8JGPYt_kym-P6Vivz9wWlG8"
 
 # Configure the genai library with the API key
 
-genai.configure(api_key=api_key)
+genai.configure(api_key="AIzaSyAf8HqQEmwg8JGPYt_kym-P6Vivz9wWlG)
 generation_config={
     "temperature":0.9,
     "top_k":40,
