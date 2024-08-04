@@ -2,7 +2,8 @@ import os
 import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-
+import streamlit as st
+from streamlit_option_menu import option_menu
 
 
 # Configure the genai library with the API key
