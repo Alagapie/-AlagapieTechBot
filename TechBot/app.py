@@ -136,7 +136,7 @@ if selected == 'Alagapie MultiLingo':
     
     # Perform translation
         
-            with st.spinner("Translating..."):
+       with st.spinner("Translating..."):
                 # Perform translation
                 translation = translate(input_language, output_language, input_text)
                 
