@@ -1,0 +1,6 @@
+streamlit
+streamlit-option-menu
+google-generativeai
+langchain-google-genai
+langchain-core
+python-dotenv
