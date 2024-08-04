@@ -6,8 +6,8 @@ from langchain_core.prompts import ChatPromptTemplate
 
 
 # Configure the genai library with the API key
-google_api_key="AIzaSyAf8HqQEmwg8JGPYt_kym-P6Vivz9wWlG8"
-genai.configure(api_key="AIzaSyAf8HqQEmwg8JGPYt_kym-P6Vivz9wWlG8")
+api_key = st.secrets["general"]["GOOGLE_API_KEY"]
+genai.configure(api_key=api_key)
 generation_config={
     "temperature":0.9,
     "top_k":40,
@@ -17,7 +17,7 @@ def chat_model():
   chat_model=genai.GenerativeModel(model_name="gemini-1.5-flash",generation_config=generation_config)
   return chat_model
 
-model=ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0.9,google_api_key=google_api_key)
+model=ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0.9,google_api_key=api_key)
 
 def generate_promp(chat_history, input_language, output_language, input_text):
     messages = [
