@@ -99,13 +99,14 @@ if selected == 'Alagapie ChatMate':
     prompt=st.chat_input("Ask Alagapie chatbot anything ")
     if prompt:
       st.chat_message('user').markdown(prompt)
-
+      placeholder = st.empty()
       with placeholder:
         with st.spinner("Generating response..."):
             response = st.session_state.chat_session.send_message(prompt)
             placeholder.empty()
+
       with st.chat_message("assistant"):
-       st.markdown(response.text)
+        st.markdown(response.text)
 if selected == 'Alagapie MultiLingo':
     st.title("🌐 Alagapie MultiLingo")
 
