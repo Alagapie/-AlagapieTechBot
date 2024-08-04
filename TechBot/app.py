@@ -135,12 +135,11 @@ if selected == 'Alagapie MultiLingo':
        st.session_state.translation_chat_history.append(("human", input_text))
     
     # Perform translation
-       placeholder = st.empty()
-       with placeholder:
+        
             with st.spinner("Translating..."):
                 # Perform translation
                 translation = translate(input_language, output_language, input_text)
-                placeholder.empty()
+                
     
     # Add translation result to chat history
        st.session_state.translation_chat_history.append(("assistant", translation))
