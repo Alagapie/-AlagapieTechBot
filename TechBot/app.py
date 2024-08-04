@@ -100,7 +100,7 @@ if selected == 'Alagapie ChatMate':
     if prompt:
      st.chat_message('user').markdown(prompt)
 
-      with placeholder:
+     with placeholder:
         with st.spinner("Generating response..."):
             response = st.session_state.chat_session.send_message(prompt)
             placeholder.empty()
